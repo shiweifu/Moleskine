@@ -14,6 +14,11 @@
 		68442EB01B706F5C0008F703 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68442EAF1B706F5C0008F703 /* Images.xcassets */; };
 		68442EB31B706F5C0008F703 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68442EB11B706F5C0008F703 /* LaunchScreen.xib */; };
 		68442EBF1B706F5C0008F703 /* MoleskineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68442EBE1B706F5C0008F703 /* MoleskineTests.m */; };
+		687894001B71F98500F93668 /* MKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 687893FF1B71F98500F93668 /* MKTextView.m */; };
+		E198837CB6CCBAEC1C490C8F /* MKHighlighterTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */; };
+		E1988A463F864129B5D128C9 /* MKMarkdownHeaderHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E19882D2CA7066971ED27688 /* MKMarkdownHeaderHighlighter.m */; };
+		E1988A7731D104589176879B /* MKHighlighterType.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */; };
+		E1988ED367B9DFB589201828 /* MKRegularExpressionHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988D5E87A364F773D7E160 /* MKRegularExpressionHighlighter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,16 @@
 		68442EB81B706F5C0008F703 /* MoleskineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoleskineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68442EBD1B706F5C0008F703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68442EBE1B706F5C0008F703 /* MoleskineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoleskineTests.m; sourceTree = "<group>"; };
+		687893FE1B71F98500F93668 /* MKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKTextView.h; sourceTree = "<group>"; };
+		687893FF1B71F98500F93668 /* MKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKTextView.m; sourceTree = "<group>"; };
+		E19882D2CA7066971ED27688 /* MKMarkdownHeaderHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownHeaderHighlighter.m; sourceTree = "<group>"; };
+		E19886CFFE3E3BB5A389927C /* MKHighlighterType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHighlighterType.h; sourceTree = "<group>"; };
+		E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterType.m; sourceTree = "<group>"; };
+		E1988B190186B52AB9D1C0BE /* MKHighlighterTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHighlighterTextStorage.h; sourceTree = "<group>"; };
+		E1988BD774BD860BBD0A582D /* MKMarkdownHeaderHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownHeaderHighlighter.h; sourceTree = "<group>"; };
+		E1988D5E87A364F773D7E160 /* MKRegularExpressionHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKRegularExpressionHighlighter.m; sourceTree = "<group>"; };
+		E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterTextStorage.m; sourceTree = "<group>"; };
+		E1988FDD00887E1B744DA7FD /* MKRegularExpressionHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKRegularExpressionHighlighter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +104,7 @@
 				68442EAF1B706F5C0008F703 /* Images.xcassets */,
 				68442EB11B706F5C0008F703 /* LaunchScreen.xib */,
 				68442EA21B706F5C0008F703 /* Supporting Files */,
+				E1988CE19B5E6690D2BFBA2D /* Classes */,
 			);
 			path = Moleskine;
 			sourceTree = "<group>";
@@ -117,6 +133,23 @@
 				68442EBD1B706F5C0008F703 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1988CE19B5E6690D2BFBA2D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				687893FE1B71F98500F93668 /* MKTextView.h */,
+				687893FF1B71F98500F93668 /* MKTextView.m */,
+				E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */,
+				E1988B190186B52AB9D1C0BE /* MKHighlighterTextStorage.h */,
+				E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */,
+				E19886CFFE3E3BB5A389927C /* MKHighlighterType.h */,
+				E1988D5E87A364F773D7E160 /* MKRegularExpressionHighlighter.m */,
+				E1988FDD00887E1B744DA7FD /* MKRegularExpressionHighlighter.h */,
+				E19882D2CA7066971ED27688 /* MKMarkdownHeaderHighlighter.m */,
+				E1988BD774BD860BBD0A582D /* MKMarkdownHeaderHighlighter.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +255,11 @@
 				68442EAB1B706F5C0008F703 /* ViewController.m in Sources */,
 				68442EA81B706F5C0008F703 /* AppDelegate.m in Sources */,
 				68442EA51B706F5C0008F703 /* main.m in Sources */,
+				E198837CB6CCBAEC1C490C8F /* MKHighlighterTextStorage.m in Sources */,
+				687894001B71F98500F93668 /* MKTextView.m in Sources */,
+				E1988A7731D104589176879B /* MKHighlighterType.m in Sources */,
+				E1988ED367B9DFB589201828 /* MKRegularExpressionHighlighter.m in Sources */,
+				E1988A463F864129B5D128C9 /* MKMarkdownHeaderHighlighter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +454,7 @@
 				68442EC41B706F5C0008F703 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68442EC51B706F5C0008F703 /* Build configuration list for PBXNativeTarget "MoleskineTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +463,7 @@
 				68442EC71B706F5C0008F703 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
