@@ -6,6 +6,13 @@
 #import "MKHighlighterTextStorage.h"
 #import "MKHighlighterType.h"
 #import "MKMarkdownHeaderHighlighter.h"
+#import "MKMarkdownLinkHighlighter.h"
+#import "MKMarkdownStrikethroughHighlighter.h"
+#import "MKMarkdownListHighlighter.h"
+#import "MKMarkdownOrderListHighlighter.h"
+#import "MKMarkdownCodeBlockHighlighter.h"
+#import "MKMarkdownInlineBlockHighlighter.h"
+#import "MKMarkdownStrongBlockHighlighter.h"
 
 @interface MKHighlighterTextStorage ()
 
@@ -30,8 +37,24 @@
     _backingStore = [NSMutableAttributedString new];
     _bodyFont = @{NSFontAttributeName:[UIFont systemFontOfSize:12],
             NSUnderlineStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleNone]};
-    MKMarkdownHeaderHighlighter *highlighter = [[MKMarkdownHeaderHighlighter alloc] init];
-    [self addHighlighter:highlighter];
+
+    MKMarkdownHeaderHighlighter *headerHighlighter               = [[MKMarkdownHeaderHighlighter alloc] init];
+    MKMarkdownLinkHighlighter *linkHighlighter                   = [[MKMarkdownLinkHighlighter alloc] init];
+    MKMarkdownListHighlighter *listHighlighter                   = [[MKMarkdownListHighlighter alloc] init];
+    MKMarkdownStrikethroughHighlighter *strikethroughHighlighter = [[MKMarkdownStrikethroughHighlighter alloc] init];
+    MKMarkdownOrderListHighlighter *orderListHighlighter         = [[MKMarkdownOrderListHighlighter alloc] init];
+    MKMarkdownCodeBlockHighlighter *codeBlockHighlighter         = [[MKMarkdownCodeBlockHighlighter alloc] init];
+    MKMarkdownInlineBlockHighlighter *inlineBlockHighlighter     = [[MKMarkdownInlineBlockHighlighter alloc] init];
+    MKMarkdownStrongBlockHighlighter *strongBlockHighlighter     = [[MKMarkdownStrongBlockHighlighter alloc] init];
+
+    [self addHighlighter:headerHighlighter];
+    [self addHighlighter:linkHighlighter];
+    [self addHighlighter:strikethroughHighlighter];
+    [self addHighlighter:listHighlighter];
+    [self addHighlighter:orderListHighlighter];
+    [self addHighlighter:codeBlockHighlighter];
+    [self addHighlighter:inlineBlockHighlighter];
+    [self addHighlighter:strongBlockHighlighter];
   }
   return self;
 }
@@ -93,7 +116,6 @@ changeInLength:str.length - range.length];
 }
 
 - (void)processEditing {
-//  [self performReplacementsForRange:self.editedRange];
   NSRange r = NSMakeRange(0, self.string.length);
   [self highlightRange:r];
   [super processEditing];
@@ -116,9 +138,11 @@ changeInLength:0];
 
   NSMutableAttributedString *attrString = [[self.backingStore attributedSubstringFromRange:range] mutableCopy];
 
+  // 每个 highlighter 对应一个描述样式的属性和正则表达式
   for (int i = 0; i < self.highlighters.count; ++i)
   {
     id<MKHighlighterTypeProtocol> highlighter = self.highlighters[i];
+    // 先进行正则表达式匹配，匹配到的内容添加样式
     [highlighter highlightAttributedString:attrString];
   }
 
@@ -126,78 +150,5 @@ changeInLength:0];
             withAttributedString:attrString];
   [self.backingStore endEditing];
 }
-
-- (void)performReplacementsForRange:(NSRange)changedRange {
-  NSRange extendedRange = NSUnionRange(changedRange, [[self.backingStore string] lineRangeForRange:NSMakeRange(changedRange.location, 0)]);
-  extendedRange = NSUnionRange(changedRange, [[self.backingStore string] lineRangeForRange:NSMakeRange(NSMaxRange(changedRange), 0)]);
-  
-  NSLog(@"extendedRange: %@", NSStringFromRange(extendedRange));
-  [self applyStylesToRange:extendedRange];
-}
-
-
-- (void)createHighlightPatterns {
-  NSDictionary *boldAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:12]};
-  NSDictionary *italicAttributes = @{NSFontAttributeName:[UIFont italicSystemFontOfSize:12]};
-  NSDictionary *boldItalicAttributes = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-BoldItalic" size:11.5]};
-
-  NSDictionary *codeAttributes = @{NSForegroundColorAttributeName:[UIColor grayColor]};
-
-  /*
-   NSDictionary *headerOneAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:14]};
-   NSDictionary *headerTwoAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:13]};
-   NSDictionary *headerThreeAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:12.5]};
-
-   Alternate H1 with underline:
-
-   NSDictionary *headerOneAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:14],NSUnderlineStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleSingle], NSUnderlineColorAttributeName:[UIColor colorWithWhite:0.933 alpha:1.0]};
-
-   Headers need to be worked on...
-
-   @"(\\#\\w+(\\s\\w+)*\n)":headerOneAttributes,
-   @"(\\##\\w+(\\s\\w+)*\n)":headerTwoAttributes,
-   @"(\\###\\w+(\\s\\w+)*\n)":headerThreeAttributes
-
-   */
-
-  NSDictionary *linkAttributes = @{NSForegroundColorAttributeName:[UIColor colorWithRed:0.255 green:0.514 blue:0.769 alpha:1.00]};
-
-  _attributeDictionary = @{
-          @"[a-zA-Z0-9\t\n ./<>?;:\\\"'`!@#$%^&*()[]{}_+=|\\-]":_bodyFont,
-          @"\\**(?:^|[^*])(\\*\\*(\\w+(\\s\\w+)*)\\*\\*)":boldAttributes,
-          @"\\**(?:^|[^*])(\\*(\\w+(\\s\\w+)*)\\*)":italicAttributes,
-          @"(\\*\\*\\*\\w+(\\s\\w+)*\\*\\*\\*)":boldItalicAttributes,
-          @"(`\\w+(\\s\\w+)*`)":codeAttributes,
-          @"(```\n([\\s\n\\d\\w[/[\\.,-\\/#!?@$%\\^&\\*;:|{}<>+=\\-'_~()\\\"\\[\\]\\\\]/]]*)\n```)":codeAttributes,
-          @"(\\[\\w+(\\s\\w+)*\\]\\(\\w+\\w[/[\\.,-\\/#!?@$%\\^&\\*;:|{}<>+=\\-'_~()\\\"\\[\\]\\\\]/ \\w+]*\\))":linkAttributes
-  };
-}
-
-- (void)update {
-  [self createHighlightPatterns];
-
-  [self addAttributes:_bodyFont range:NSMakeRange(0, self.length)];
-
-  [self applyStylesToRange:NSMakeRange(0, self.length)];
-}
-
-- (void)applyStylesToRange:(NSRange)searchRange {
-  for (NSString *key in _attributeDictionary) {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:key options:0 error:nil];
-
-    NSDictionary *attributes = _attributeDictionary[key];
-
-    [regex enumerateMatchesInString:[self.backingStore string] options:0 range:searchRange
-                         usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop) {
-                           NSRange matchRange = [match rangeAtIndex:1];
-                           [self addAttributes:attributes range:matchRange];
-
-                           if (NSMaxRange(matchRange)+1 < self.length) {
-                             [self addAttributes:_bodyFont range:NSMakeRange(NSMaxRange(matchRange)+1, 1)];
-                           }
-                         }];
-  }
-}
-
 
 @end

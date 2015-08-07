@@ -10,11 +10,15 @@
 
 typedef void (^MKRegularExpressionBlock)(NSTextCheckingResult *obj);
 
+@protocol MKRegularExpressionProtocol
+
+- (NSRegularExpression *)regularExpression;
+- (NSDictionary *)attributes;
+
+@end
 
 @interface MKRegularExpressionHighlighter : NSObject <MKHighlighterTypeProtocol>
 
-- (instancetype)initWithRegularExpression:(NSRegularExpression *)regularExpression
-                               attributes:(NSDictionary *)attributes;
 
 + (NSRegularExpression *)regexFromPattern:(NSString *)pattern;
 

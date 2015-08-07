@@ -17,6 +17,11 @@
 
 }
 
+- (NSRegularExpression *)regularExpression
+{
+  return self.regex;
+}
+
 -(NSDictionary *)attributes
 {
   return @{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]};

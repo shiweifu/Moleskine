@@ -7,27 +7,14 @@
 
 @interface MKRegularExpressionHighlighter()
 
-@property(nonatomic, strong) NSRegularExpression *regularExpression;
-@property(nonatomic, strong) NSDictionary        *attributes;
+@property (nonatomic, strong) NSRegularExpression *regularExpression;
+@property (nonatomic, strong) NSDictionary *attributes;
 
 @end
 
 @implementation MKRegularExpressionHighlighter
 {
 
-}
-
-- (instancetype)initWithRegularExpression:(NSRegularExpression *)regularExpression
-                               attributes:(NSDictionary *)attributes
-{
-  self = [super init];
-  if (self)
-  {
-    _regularExpression = regularExpression;
-    _attributes = attributes;
-  }
-
-  return self;
 }
 
 - (void)highlightAttributedString:(NSMutableAttributedString *)attributedString
@@ -39,10 +26,9 @@
                                                [attributedString addAttributes:self.attributes
                                                                          range:obj.range];
                                              }];
-
 }
 
-+(NSRegularExpression *)regexFromPattern:(NSString *)pattern
++ (NSRegularExpression *)regexFromPattern:(NSString *)pattern
 {
   NSError *error = nil;
   NSRegularExpression *regex;
