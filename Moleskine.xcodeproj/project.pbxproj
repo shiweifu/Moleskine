@@ -17,6 +17,7 @@
 		687894001B71F98500F93668 /* MKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 687893FF1B71F98500F93668 /* MKTextView.m */; };
 		E19881889E6C943D0ACC8CB9 /* MKMarkdownStrikethroughHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E198883CC3AC82C6EB9ADBC0 /* MKMarkdownStrikethroughHighlighter.m */; };
 		E198837CB6CCBAEC1C490C8F /* MKHighlighterTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */; };
+		E19884222C7E7D0B66E7C11B /* MKKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E198894D683C3E598BFD71E8 /* MKKeyboardToolBar.m */; };
 		E198846F90BA9B9ED7CF5D1E /* MKMarkdownListHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988E9A488D814DEE93F94F /* MKMarkdownListHighlighter.m */; };
 		E1988584A1CFDB7B99019A13 /* MKMarkdownOrderListHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988B622E3EFD88398FDA03 /* MKMarkdownOrderListHighlighter.m */; };
 		E19888903671F1D2821C6A9C /* MKMarkdownCodeBlockHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E19889534CAF0CA31C60522B /* MKMarkdownCodeBlockHighlighter.m */; };
@@ -64,7 +65,9 @@
 		E19886CFFE3E3BB5A389927C /* MKHighlighterType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHighlighterType.h; sourceTree = "<group>"; };
 		E19886D4C55193AF5F91D6BA /* MKMarkdownStrongBlockHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownStrongBlockHighlighter.h; sourceTree = "<group>"; };
 		E1988767B61F7782320A561B /* MKMarkdownLinkHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownLinkHighlighter.m; sourceTree = "<group>"; };
+		E19887CDD056BC650616F981 /* MKKeyboardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKKeyboardToolBar.h; sourceTree = "<group>"; };
 		E198883CC3AC82C6EB9ADBC0 /* MKMarkdownStrikethroughHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownStrikethroughHighlighter.m; sourceTree = "<group>"; };
+		E198894D683C3E598BFD71E8 /* MKKeyboardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKKeyboardToolBar.m; sourceTree = "<group>"; };
 		E19889534CAF0CA31C60522B /* MKMarkdownCodeBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownCodeBlockHighlighter.m; sourceTree = "<group>"; };
 		E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterType.m; sourceTree = "<group>"; };
 		E1988B190186B52AB9D1C0BE /* MKHighlighterTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHighlighterTextStorage.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				E1988167F839E11350B1C959 /* MKMarkdownInlineBlockHighlighter.h */,
 				E1988483F48708A2DB0B9541 /* MKMarkdownStrongBlockHighlighter.m */,
 				E19886D4C55193AF5F91D6BA /* MKMarkdownStrongBlockHighlighter.h */,
+				E198894D683C3E598BFD71E8 /* MKKeyboardToolBar.m */,
+				E19887CDD056BC650616F981 /* MKKeyboardToolBar.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				E19888903671F1D2821C6A9C /* MKMarkdownCodeBlockHighlighter.m in Sources */,
 				E1988CABC5E3B06DF3B40F9A /* MKMarkdownInlineBlockHighlighter.m in Sources */,
 				E1988BA212BB66E51B57F597 /* MKMarkdownStrongBlockHighlighter.m in Sources */,
+				E19884222C7E7D0B66E7C11B /* MKKeyboardToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

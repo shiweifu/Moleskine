@@ -8,6 +8,7 @@
 
 #import "MKTextView.h"
 #import "MKHighlighterTextStorage.h"
+#import "MKKeyboardToolBar.h"
 
 @interface MKTextView()
 
@@ -36,13 +37,44 @@
   
   if (self = [super initWithFrame:frame textContainer:container]) {
     self.delegate = self;
-//    self.inputAccessoryView = [RFKeyboardToolbar toolbarWithButtons:[self buttons]];
+    self.inputAccessoryView = self.toolBar;
   }
   return self;
 }
 
-- (void)textViewDidChange:(UITextView *)textView {
-//  [_syntaxStorage update];
+- (MKKeyboardToolBar *)toolBar
+{
+  if(!_toolBar)
+  {
+    _toolBar = [[MKKeyboardToolBar alloc] initWithDataSource:self];
+    [_toolBar setDataSource:self];
+  }
+  return _toolBar;
 }
+
+- (void)textViewDidChange:(UITextView *)textView {
+}
+
+#pragma mark - toolbar dataSource
+
+- (NSUInteger)numbersOfToolButton
+{
+  return 1;
+}
+
+- (UIView *)viewWithIndex:(NSUInteger)index
+{
+  UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+  [btn setFrame:CGRectMake(0, 0, 100, 40)];
+  [btn setTitle:@"hello" forState:UIControlStateNormal];
+  [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+  return btn;
+}
+
+- (void)viewDidTapFromIndex:(NSUInteger)index
+{
+
+}
+
 
 @end

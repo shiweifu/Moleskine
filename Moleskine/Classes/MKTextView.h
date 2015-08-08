@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKKeyboardToolBar.h"
 
-@interface MKTextView : UITextView <UITextViewDelegate>
+@class MKKeyboardToolBar;
+
+@interface MKTextView : UITextView <UITextViewDelegate, MKKeyboardToolBarDataSource>
+
+@property (nonatomic, strong) MKKeyboardToolBar *toolBar;
 
 @end
