@@ -39,13 +39,13 @@
       UIView *v = [self.dataSource viewWithIndex:i];
       [self.insideView addSubview:v];
       CGFloat inset = self.inset;
-      originFrame = CGRectMake(originX, 0, v.frame.size.width, v.frame.size.height);
+      CGFloat originY = (40 - v.frame.size.height) / 2;
+      originFrame = CGRectMake(originX, originY, v.frame.size.width, v.frame.size.height);
       [v setFrame:originFrame];
-      originX = originX + v.bounds.size.width + 8;
+      originX = originX + v.bounds.size.width + self.inset;
     }
 
-    CGSize contentSize = self.insideView.contentSize;
-    contentSize.width = originX - self.inset;
+    CGSize contentSize = CGSizeMake(originX, 40);
     self.insideView.contentSize = contentSize;
   }
 }
@@ -59,15 +59,24 @@
   return _inset;
 }
 
+-(void)reloadData
+{
+  [self.insideView removeFromSuperview];
+  _insideView = nil;
+  [_toolbarView addSubview:self.insideView];
+  [self initButtons];
+}
+
 -(UIScrollView *)insideView
 {
   if(!_insideView)
   {
-    _insideView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 40)];
+    CGFloat w = self.window.rootViewController.view.bounds.size.width;
+    _insideView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, w, 40)];
     _insideView.backgroundColor = [UIColor clearColor];
     _insideView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     _insideView.showsHorizontalScrollIndicator = NO;
-    _insideView.contentInset = UIEdgeInsetsMake(6.0f, 0.0f, 8.0f, 6.0f);
+//    _insideView.contentInset = UIEdgeInsetsMake(6.0f, 0.0f, 8.0f, 6.0f);
   }
   return _insideView;
 }
@@ -81,5 +90,11 @@
 
   return _toolbarView;
 }
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+  self.insideView.backgroundColor = backgroundColor;
+}
+
 
 @end

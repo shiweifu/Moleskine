@@ -15,17 +15,29 @@
 		68442EB31B706F5C0008F703 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68442EB11B706F5C0008F703 /* LaunchScreen.xib */; };
 		68442EBF1B706F5C0008F703 /* MoleskineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68442EBE1B706F5C0008F703 /* MoleskineTests.m */; };
 		687894001B71F98500F93668 /* MKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 687893FF1B71F98500F93668 /* MKTextView.m */; };
+		E19880374C427CA25D0872A4 /* ol.png in Resources */ = {isa = PBXBuildFile; fileRef = E19880D49A52DE26F5DF4F2A /* ol.png */; };
+		E19880C29D0E19952A9BA3FF /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988D0AF7D380CAAD27BB0C /* help.png */; };
+		E19881321B37CEB21DDB1C11 /* bold.png in Resources */ = {isa = PBXBuildFile; fileRef = E198874B170A2C6595068EF4 /* bold.png */; };
 		E19881889E6C943D0ACC8CB9 /* MKMarkdownStrikethroughHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E198883CC3AC82C6EB9ADBC0 /* MKMarkdownStrikethroughHighlighter.m */; };
+		E198832E90B687071E5FF929 /* ul.png in Resources */ = {isa = PBXBuildFile; fileRef = E19888F4DCBBB693158FC2DD /* ul.png */; };
 		E198837CB6CCBAEC1C490C8F /* MKHighlighterTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */; };
 		E19884222C7E7D0B66E7C11B /* MKKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E198894D683C3E598BFD71E8 /* MKKeyboardToolBar.m */; };
+		E19884332953F2B136F1EAAD /* link.png in Resources */ = {isa = PBXBuildFile; fileRef = E198811727E9C1F90EE5989A /* link.png */; };
+		E1988469416DDF72AC1845F7 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988F1C7484C68CF4C7AEFE /* more.png */; };
 		E198846F90BA9B9ED7CF5D1E /* MKMarkdownListHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988E9A488D814DEE93F94F /* MKMarkdownListHighlighter.m */; };
+		E19885777ED93324D2032F4C /* quote.png in Resources */ = {isa = PBXBuildFile; fileRef = E19881CDFEB3B8DF88CCE3AD /* quote.png */; };
 		E1988584A1CFDB7B99019A13 /* MKMarkdownOrderListHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988B622E3EFD88398FDA03 /* MKMarkdownOrderListHighlighter.m */; };
+		E19886032B84F43A26921B83 /* code.png in Resources */ = {isa = PBXBuildFile; fileRef = E19884B569DB2648CF06BF92 /* code.png */; };
+		E198883306FF25755C0F2B6D /* hr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988E009055853A58A2C2FD /* hr.png */; };
 		E19888903671F1D2821C6A9C /* MKMarkdownCodeBlockHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E19889534CAF0CA31C60522B /* MKMarkdownCodeBlockHighlighter.m */; };
 		E1988A463F864129B5D128C9 /* MKMarkdownHeaderHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E19882D2CA7066971ED27688 /* MKMarkdownHeaderHighlighter.m */; };
 		E1988A7731D104589176879B /* MKHighlighterType.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */; };
+		E1988ACDFB041C162E81C4AD /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988A7D06523592C0606F79 /* title.png */; };
 		E1988BA212BB66E51B57F597 /* MKMarkdownStrongBlockHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988483F48708A2DB0B9541 /* MKMarkdownStrongBlockHighlighter.m */; };
 		E1988CABC5E3B06DF3B40F9A /* MKMarkdownInlineBlockHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988DB6A023632C84385B36 /* MKMarkdownInlineBlockHighlighter.m */; };
+		E1988E700E436CF062412DE2 /* italic.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988150B401F7AC1A63787B /* italic.png */; };
 		E1988ED367B9DFB589201828 /* MKRegularExpressionHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988D5E87A364F773D7E160 /* MKRegularExpressionHighlighter.m */; };
+		E1988F87DBF9EE3AC27C3317 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = E19886716AF45FA4B3723CE4 /* img.png */; };
 		E1988FF811B292DA1F6341BB /* MKMarkdownLinkHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988767B61F7782320A561B /* MKMarkdownLinkHighlighter.m */; };
 /* End PBXBuildFile section */
 
@@ -55,28 +67,40 @@
 		68442EBE1B706F5C0008F703 /* MoleskineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoleskineTests.m; sourceTree = "<group>"; };
 		687893FE1B71F98500F93668 /* MKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKTextView.h; sourceTree = "<group>"; };
 		687893FF1B71F98500F93668 /* MKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKTextView.m; sourceTree = "<group>"; };
+		E19880D49A52DE26F5DF4F2A /* ol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ol.png; sourceTree = "<group>"; };
+		E198811727E9C1F90EE5989A /* link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link.png; sourceTree = "<group>"; };
+		E1988150B401F7AC1A63787B /* italic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = italic.png; sourceTree = "<group>"; };
 		E1988167F839E11350B1C959 /* MKMarkdownInlineBlockHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownInlineBlockHighlighter.h; sourceTree = "<group>"; };
+		E19881CDFEB3B8DF88CCE3AD /* quote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quote.png; sourceTree = "<group>"; };
 		E19882D2CA7066971ED27688 /* MKMarkdownHeaderHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownHeaderHighlighter.m; sourceTree = "<group>"; };
 		E198839C4386EACC67D03AAA /* MKMarkdownStrikethroughHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownStrikethroughHighlighter.h; sourceTree = "<group>"; };
 		E19883E671AD1A539FBC3C0A /* MKMarkdownListHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownListHighlighter.h; sourceTree = "<group>"; };
 		E1988483F48708A2DB0B9541 /* MKMarkdownStrongBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownStrongBlockHighlighter.m; sourceTree = "<group>"; };
+		E19884B569DB2648CF06BF92 /* code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = code.png; sourceTree = "<group>"; };
 		E198861FC3CB6226690B8A64 /* MKMarkdownCodeBlockHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownCodeBlockHighlighter.h; sourceTree = "<group>"; };
 		E198865AF6944D5A5F26E8D9 /* MKMarkdownLinkHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownLinkHighlighter.h; sourceTree = "<group>"; };
+		E19886716AF45FA4B3723CE4 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 		E19886CFFE3E3BB5A389927C /* MKHighlighterType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHighlighterType.h; sourceTree = "<group>"; };
 		E19886D4C55193AF5F91D6BA /* MKMarkdownStrongBlockHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownStrongBlockHighlighter.h; sourceTree = "<group>"; };
+		E198874B170A2C6595068EF4 /* bold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bold.png; sourceTree = "<group>"; };
 		E1988767B61F7782320A561B /* MKMarkdownLinkHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownLinkHighlighter.m; sourceTree = "<group>"; };
 		E19887CDD056BC650616F981 /* MKKeyboardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKKeyboardToolBar.h; sourceTree = "<group>"; };
 		E198883CC3AC82C6EB9ADBC0 /* MKMarkdownStrikethroughHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownStrikethroughHighlighter.m; sourceTree = "<group>"; };
+		E19888F4DCBBB693158FC2DD /* ul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ul.png; sourceTree = "<group>"; };
 		E198894D683C3E598BFD71E8 /* MKKeyboardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKKeyboardToolBar.m; sourceTree = "<group>"; };
 		E19889534CAF0CA31C60522B /* MKMarkdownCodeBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownCodeBlockHighlighter.m; sourceTree = "<group>"; };
 		E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterType.m; sourceTree = "<group>"; };
+		E1988A7D06523592C0606F79 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		E1988B190186B52AB9D1C0BE /* MKHighlighterTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHighlighterTextStorage.h; sourceTree = "<group>"; };
 		E1988B281F71C587CB5D20F5 /* MKMarkdownOrderListHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownOrderListHighlighter.h; sourceTree = "<group>"; };
 		E1988B622E3EFD88398FDA03 /* MKMarkdownOrderListHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownOrderListHighlighter.m; sourceTree = "<group>"; };
 		E1988BD774BD860BBD0A582D /* MKMarkdownHeaderHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownHeaderHighlighter.h; sourceTree = "<group>"; };
+		E1988D0AF7D380CAAD27BB0C /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		E1988D5E87A364F773D7E160 /* MKRegularExpressionHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKRegularExpressionHighlighter.m; sourceTree = "<group>"; };
 		E1988DB6A023632C84385B36 /* MKMarkdownInlineBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownInlineBlockHighlighter.m; sourceTree = "<group>"; };
+		E1988E009055853A58A2C2FD /* hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hr.png; sourceTree = "<group>"; };
 		E1988E9A488D814DEE93F94F /* MKMarkdownListHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownListHighlighter.m; sourceTree = "<group>"; };
+		E1988F1C7484C68CF4C7AEFE /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterTextStorage.m; sourceTree = "<group>"; };
 		E1988FDD00887E1B744DA7FD /* MKRegularExpressionHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKRegularExpressionHighlighter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +153,7 @@
 				68442EB11B706F5C0008F703 /* LaunchScreen.xib */,
 				68442EA21B706F5C0008F703 /* Supporting Files */,
 				E1988CE19B5E6690D2BFBA2D /* Classes */,
+				E1988B4A2B642CB9FF4FCD61 /* Images */,
 			);
 			path = Moleskine;
 			sourceTree = "<group>";
@@ -157,6 +182,25 @@
 				68442EBD1B706F5C0008F703 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1988B4A2B642CB9FF4FCD61 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E198874B170A2C6595068EF4 /* bold.png */,
+				E19884B569DB2648CF06BF92 /* code.png */,
+				E1988D0AF7D380CAAD27BB0C /* help.png */,
+				E1988E009055853A58A2C2FD /* hr.png */,
+				E19886716AF45FA4B3723CE4 /* img.png */,
+				E1988150B401F7AC1A63787B /* italic.png */,
+				E198811727E9C1F90EE5989A /* link.png */,
+				E1988F1C7484C68CF4C7AEFE /* more.png */,
+				E19880D49A52DE26F5DF4F2A /* ol.png */,
+				E19881CDFEB3B8DF88CCE3AD /* quote.png */,
+				E1988A7D06523592C0606F79 /* title.png */,
+				E19888F4DCBBB693158FC2DD /* ul.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		E1988CE19B5E6690D2BFBA2D /* Classes */ = {
@@ -275,6 +319,18 @@
 				68442EAE1B706F5C0008F703 /* Main.storyboard in Resources */,
 				68442EB31B706F5C0008F703 /* LaunchScreen.xib in Resources */,
 				68442EB01B706F5C0008F703 /* Images.xcassets in Resources */,
+				E19881321B37CEB21DDB1C11 /* bold.png in Resources */,
+				E19886032B84F43A26921B83 /* code.png in Resources */,
+				E19880C29D0E19952A9BA3FF /* help.png in Resources */,
+				E198883306FF25755C0F2B6D /* hr.png in Resources */,
+				E1988F87DBF9EE3AC27C3317 /* img.png in Resources */,
+				E1988E700E436CF062412DE2 /* italic.png in Resources */,
+				E19884332953F2B136F1EAAD /* link.png in Resources */,
+				E1988469416DDF72AC1845F7 /* more.png in Resources */,
+				E19880374C427CA25D0872A4 /* ol.png in Resources */,
+				E19885777ED93324D2032F4C /* quote.png in Resources */,
+				E1988ACDFB041C162E81C4AD /* title.png in Resources */,
+				E198832E90B687071E5FF929 /* ul.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

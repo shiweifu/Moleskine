@@ -20,4 +20,7 @@
 @property (nonatomic, assign) id <MKKeyboardToolBarDataSource> dataSource;
 
 - (instancetype)initWithDataSource:(id <MKKeyboardToolBarDataSource>)dataSource;
+
+-(void)reloadData;
+
 @end
