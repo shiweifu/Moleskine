@@ -43,11 +43,20 @@
       originFrame = CGRectMake(originX, originY, v.frame.size.width, v.frame.size.height);
       [v setFrame:originFrame];
       originX = originX + v.bounds.size.width + self.inset;
+      v.tag = i;
+      [v addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                      action:@selector(handleTapView:)] ];
     }
 
     CGSize contentSize = CGSizeMake(originX, 40);
     self.insideView.contentSize = contentSize;
   }
+}
+
+- (void)handleTapView:(UITapGestureRecognizer *)tap
+{
+  NSInteger t = (NSInteger) tap.view.tag;
+  [self.dataSource viewDidTapFromIndex:t];
 }
 
 - (NSUInteger)inset

@@ -10,7 +10,7 @@
 #import "MKHighlighterTextStorage.h"
 #import "MKKeyboardToolBar.h"
 
-@interface MKTextView()
+@interface MKTextView() <UIActionSheetDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) MKHighlighterTextStorage *syntaxStorage;
 @property (strong, nonatomic) NSArray *images;
@@ -77,8 +77,261 @@
 
 - (void)viewDidTapFromIndex:(NSUInteger)index
 {
-
+  if(index == 0)
+  {
+    [self onBold];
+  }
+  else if(index == 1)
+  {
+    [self onItalic];
+  }
+  else if(index == 2)
+  {
+    [self onLink];
+  }
+  else if(index == 3)
+  {
+    [self onQuote];
+  }
+  else if(index == 4)
+  {
+    [self onCode];
+  }
+  else if(index == 5)
+  {
+    [self onImg];
+  }
+  else if(index == 6)
+  {
+    [self onOl];
+  }
+  else if(index == 7)
+  {
+    [self onTitle];
+  }
+  else if(index == 8)
+  {
+    [self onHR];
+  }
 }
+
+#pragma mark - Event
+
+- (void)onHR
+{
+  UITextView *textView = self;
+  NSRange selectionRange = textView.selectedRange;
+  if (textView.text.length == 0) {
+    selectionRange.location += 4;
+    [textView insertText:@"---\n"];
+  } else {
+    selectionRange.location += 5;
+    [textView insertText:@"\n---\n"];
+  }
+  textView.selectedRange = selectionRange;
+}
+
+- (void)onTitle
+{
+  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"标题"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:@"H1", @"H2", @"H3", @"H4", @"H5", @"H6", nil];
+
+  [actionSheet showInView:self];
+}
+
+- (void)onOl
+{
+  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"列表"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:@"有序列表", @"无序列表", nil];
+
+  [actionSheet showInView:self];
+}
+
+- (void)onImg
+{
+  NSRange selectionRange = self.selectedRange;
+  selectionRange.location += 2;
+
+  [self insertText:@"![]()"];
+  [self setSelectionRange:selectionRange];
+}
+
+- (void)onCode
+{
+  NSRange selectionRange = self.selectedRange;
+  selectionRange.location += self.text.length == 0 ? 3 : 4;
+
+  [self insertText: self.text.length == 0 ? @"```\n```" : @"\n```\n```"];
+  [self setSelectionRange:selectionRange];
+}
+
+- (void)onQuote
+{
+  NSRange selectionRange = self.selectedRange;
+  selectionRange.location += 3;
+
+  [self insertText:self.text.length == 0 ? @"> " : @"\n> "];
+  [self setSelectionRange:selectionRange];
+}
+
+- (void)onLink
+{
+  [self resignFirstResponder];
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"输入链接"
+                                                      message:nil
+                                                     delegate:self
+                                            cancelButtonTitle:@"取消"
+                                            otherButtonTitles:@"确定", nil];
+  alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+  UITextField *titleTextField = [alertView textFieldAtIndex:0];
+  UITextField *urlTextField   = [alertView textFieldAtIndex:1];
+
+  [titleTextField setPlaceholder:@"输入标题"];
+  [urlTextField   setPlaceholder:@"输入链接"];
+  urlTextField.secureTextEntry = NO;
+  [urlTextField setText:@"http://"];
+//
+  [alertView show];
+}
+
+- (void)onItalic
+{
+  NSRange selectionRange = self.selectedRange;
+  [self insertText:@"*Italic*"];
+  selectionRange.location += 1;
+  selectionRange.length    = 6;
+  [self setSelectionRange:selectionRange];
+}
+
+- (void)onBold
+{
+  NSRange selectionRange = self.selectedRange;
+  [self insertText:@"**Bold**"];
+  selectionRange.location += 2;
+  selectionRange.length    = 4;
+  [self setSelectionRange:selectionRange];
+}
+
+#pragma mark - ActionSheet delegate
+
+- (void) actionSheet:(UIActionSheet *)actionSheet
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  NSString *s = [actionSheet buttonTitleAtIndex:buttonIndex];
+  NSLog(@"you click sheet by title: %@", s);
+  UITextView *textView = self;
+  NSRange selectionRange = textView.selectedRange;
+  if([s isEqualToString:@"H1"])
+  {
+    if (textView.text.length == 0) {
+      selectionRange.location += 2;
+      [textView insertText:@"# "];
+    } else {
+      selectionRange.location += 3;
+      [textView insertText:@"\n# "];
+    }
+    [textView insertText:@" #"];
+    textView.selectedRange = selectionRange;
+  }
+  else if([s isEqualToString:@"H2"])
+  {
+    if (textView.text.length == 0) {
+      selectionRange.location += 3;
+      [textView insertText:@"## "];
+    } else {
+      selectionRange.location += 4;
+      [textView insertText:@"\n## "];
+    }
+    [textView insertText:@" ##"];
+    textView.selectedRange = selectionRange;
+  }
+  else if([s isEqualToString:@"H3"])
+  {
+    if (textView.text.length == 0) {
+      selectionRange.location += 4;
+      [textView insertText:@"### "];
+    } else {
+      selectionRange.location += 5;
+      [textView insertText:@"\n### "];
+    }
+    [textView insertText:@" ###"];
+    textView.selectedRange = selectionRange;
+  }
+  else if([s isEqualToString:@"H4"])
+  {
+    if (textView.text.length == 0) {
+      selectionRange.location += 5;
+      [textView insertText:@"#### "];
+    } else {
+      selectionRange.location += 6;
+      [textView insertText:@"\n#### "];
+    }
+    [textView insertText:@" ####"];
+    textView.selectedRange = selectionRange;
+  }
+  else if([s isEqualToString:@"H5"])
+  {
+    if (textView.text.length == 0) {
+      selectionRange.location += 6;
+      [textView insertText:@"##### "];
+    } else {
+      selectionRange.location += 7;
+      [textView insertText:@"\n##### "];
+    }
+    [textView insertText:@" #####"];
+    textView.selectedRange = selectionRange;
+  }
+  else if([s isEqualToString:@"H6"])
+  {
+    if (textView.text.length == 0) {
+      selectionRange.location += 7;
+      [textView insertText:@"###### "];
+    } else {
+      selectionRange.location += 8;
+      [textView insertText:@"\n###### "];
+    }
+    [textView insertText:@" ######"];
+    textView.selectedRange = selectionRange;
+  }
+  else if([s isEqualToString:@"有序列表"])
+  {
+    selectionRange.length = 4;
+    if(textView.text.length == 0)
+    {
+      selectionRange.location += 3;
+      [textView insertText:@"1. item\n2. \n3. \n"];
+    }
+    else
+    {
+      selectionRange.location += 4;
+      [textView insertText:@"\n1. item\n2. \n3. \n"];
+    }
+    textView.selectedRange = selectionRange;
+  }
+  else if([s isEqualToString:@"无序列表"])
+  {
+    selectionRange.length = 4;
+    if(textView.text.length == 0)
+    {
+      selectionRange.location += 2;
+      [textView insertText:@"- item\n-item \n item "];
+    }
+    else
+    {
+      selectionRange.location += 3;
+      [textView insertText:@"\n- item\n-item \n-item "];
+    }
+    [textView insertText:@""];
+    textView.selectedRange = selectionRange;
+  }
+}
+
 
 #pragma mark - Utils
 
@@ -108,6 +361,14 @@
   return btn;
 }
 
+- (void)setSelectionRange:(NSRange)range {
+  UIColor *previousTint = self.tintColor;
+
+  self.tintColor = UIColor.clearColor;
+  self.selectedRange = range;
+  self.tintColor = previousTint;
+}
+
 -(NSArray *)images
 {
   if(!_images)
@@ -115,6 +376,22 @@
     _images = @[@"bold", @"italic", @"link", @"quote", @"code", @"img", @"ol", @"title", @"hr"];
   }
   return _images;
+}
+
+#pragma mark - alertView Delegate
+
+- (void)   alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  if(buttonIndex == 0)
+  {
+    return;
+  }
+  UITextField *titleTextField = [alertView textFieldAtIndex:0];
+  UITextField *urlTextField   = [alertView textFieldAtIndex:1];
+
+  NSString *s = [NSString stringWithFormat:@"[%@](%@)", titleTextField.text, urlTextField.text];
+  [self insertText:s];
 }
 
 @end
