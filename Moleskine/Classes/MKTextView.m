@@ -119,6 +119,13 @@
 
 - (void)onHR
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onHR:)])
+  {
+    [o onHR:self];
+    return;
+  }
+
   UITextView *textView = self;
   NSRange selectionRange = textView.selectedRange;
   if (textView.text.length == 0) {
@@ -133,6 +140,14 @@
 
 - (void)onTitle
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onTitle:)])
+  {
+    [o onTitle:self];
+    return;
+  }
+
+
   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"标题"
                                                            delegate:self
                                                   cancelButtonTitle:@"取消"
@@ -144,6 +159,14 @@
 
 - (void)onOl
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onOl:)])
+  {
+    [o onOl:self];
+    return;
+  }
+
+
   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"列表"
                                                            delegate:self
                                                   cancelButtonTitle:@"取消"
@@ -155,15 +178,59 @@
 
 - (void)onImg
 {
-  NSRange selectionRange = self.selectedRange;
-  selectionRange.location += 2;
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onImg:)])
+  {
+    [o onImg:self];
+    return;
+  }
 
-  [self insertText:@"![]()"];
-  [self setSelectionRange:selectionRange];
+  [self resignFirstResponder];
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"输入链接"
+                                                      message:nil
+                                                     delegate:self
+                                            cancelButtonTitle:@"取消"
+                                            otherButtonTitles:@"确定", nil];
+  alertView.tag = 1001;
+  alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+  UITextField *titleTextField = [alertView textFieldAtIndex:0];
+  UITextField *urlTextField   = [alertView textFieldAtIndex:1];
+
+  [titleTextField setPlaceholder:@"输入标题"];
+  [urlTextField   setPlaceholder:@"输入链接"];
+  urlTextField.secureTextEntry = NO;
+  [urlTextField setText:@"http://"];
+
+  [alertView show];
+
+
+
+
+
+
+//  id <MKTextViewEventDelegate> o = self.mkDelegate;
+//  if ([o respondsToSelector:@selector(onImg:)])
+//  {
+//    [o onImg:self];
+//    return;
+//  }
+//
+//  NSRange selectionRange = self.selectedRange;
+//  selectionRange.location += 2;
+//
+//  [self insertText:@"![]()"];
+//  [self setSelectionRange:selectionRange];
 }
 
 - (void)onCode
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onCode:)])
+  {
+    [o onCode:self];
+    return;
+  }
+
   NSRange selectionRange = self.selectedRange;
   selectionRange.location += self.text.length == 0 ? 3 : 4;
 
@@ -173,6 +240,13 @@
 
 - (void)onQuote
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onQuote:)])
+  {
+    [o onQuote:self];
+    return;
+  }
+
   NSRange selectionRange = self.selectedRange;
   selectionRange.location += 3;
 
@@ -182,6 +256,13 @@
 
 - (void)onLink
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onLink:)])
+  {
+    [o onLink:self];
+    return;
+  }
+
   [self resignFirstResponder];
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"输入链接"
                                                       message:nil
@@ -196,12 +277,19 @@
   [urlTextField   setPlaceholder:@"输入链接"];
   urlTextField.secureTextEntry = NO;
   [urlTextField setText:@"http://"];
-//
+
   [alertView show];
 }
 
 - (void)onItalic
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onItalic:)])
+  {
+    [o onItalic:self];
+    return;
+  }
+
   NSRange selectionRange = self.selectedRange;
   [self insertText:@"*Italic*"];
   selectionRange.location += 1;
@@ -211,6 +299,13 @@
 
 - (void)onBold
 {
+  id <MKTextViewEventDelegate> o = self.mkDelegate;
+  if ([o respondsToSelector:@selector(onBold:)])
+  {
+    [o onBold:self];
+    return;
+  }
+
   NSRange selectionRange = self.selectedRange;
   [self insertText:@"**Bold**"];
   selectionRange.location += 2;
@@ -391,6 +486,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
   UITextField *urlTextField   = [alertView textFieldAtIndex:1];
 
   NSString *s = [NSString stringWithFormat:@"[%@](%@)", titleTextField.text, urlTextField.text];
+
+  //insert image
+  if(alertView.tag == 1001)
+  {
+    s = [NSString stringWithFormat:@"![%@](%@)", titleTextField.text, urlTextField.text];
+  }
+
   [self insertText:s];
 }
 

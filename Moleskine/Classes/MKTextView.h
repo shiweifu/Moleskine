@@ -9,10 +9,31 @@
 #import <UIKit/UIKit.h>
 #import "MKKeyboardToolBar.h"
 
+
+@class MKTextView;
+
+@protocol MKTextViewEventDelegate
+
+@optional
+
+- (void)onHR:(MKTextView *)textView;
+- (void)onTitle:(MKTextView *)textView;
+- (void)onOl:(MKTextView *)textView;
+- (void)onImg:(MKTextView *)textView;
+- (void)onCode:(MKTextView *)textView;
+- (void)onQuote:(MKTextView *)textView;
+- (void)onLink:(MKTextView *)textView;
+- (void)onItalic:(MKTextView *)textView;
+- (void)onBold:(MKTextView *)textView;
+
+@end
+
+
 @class MKKeyboardToolBar;
 
 @interface MKTextView : UITextView <UITextViewDelegate, MKKeyboardToolBarDataSource>
 
 @property (nonatomic, strong) MKKeyboardToolBar *toolBar;
+@property (nonatomic, weak) id<MKTextViewEventDelegate> mkDelegate;
 
 @end

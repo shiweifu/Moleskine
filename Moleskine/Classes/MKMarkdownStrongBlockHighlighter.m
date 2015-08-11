@@ -12,7 +12,7 @@
 
 - (NSRegularExpression *)regularExpression
 {
-  return [MKRegularExpressionHighlighter regexFromPattern:@"(\\*\\*|__)(?=\\S)(?:.+?[*_]*)(?<=\\S)\\1"];
+  return [MKRegularExpressionHighlighter regexFromPattern:@"\\**(?:^|[^*])(\\*\\*(\\w+(\\s\\w+)*)\\*\\*)"];
 }
 
 - (NSDictionary *)attributes
