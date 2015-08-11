@@ -12,8 +12,6 @@
 
 - (NSRegularExpression *)regularExpression
 {
-
-
   return [MKRegularExpressionHighlighter regexFromPattern:@"(```\n([\\s\n\\d\\w[/[\\.,-\\/#!?@$%\\^&\\*;:|{}<>+=\\-'_~()\\\"\\[\\]\\\\]/]]*)\n```)"];
 }
 

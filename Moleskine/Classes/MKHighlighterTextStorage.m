@@ -13,6 +13,7 @@
 #import "MKMarkdownCodeBlockHighlighter.h"
 #import "MKMarkdownInlineBlockHighlighter.h"
 #import "MKMarkdownStrongBlockHighlighter.h"
+#import "MKMarkdownItalicHighlighter.h"
 
 @interface MKHighlighterTextStorage ()
 
@@ -38,6 +39,7 @@
     _bodyFont = @{NSFontAttributeName:[UIFont systemFontOfSize:12],
             NSUnderlineStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleNone]};
 
+    MKMarkdownItalicHighlighter *italicHighlighter               = [[MKMarkdownItalicHighlighter alloc] init];
     MKMarkdownHeaderHighlighter *headerHighlighter               = [[MKMarkdownHeaderHighlighter alloc] init];
     MKMarkdownLinkHighlighter *linkHighlighter                   = [[MKMarkdownLinkHighlighter alloc] init];
     MKMarkdownListHighlighter *listHighlighter                   = [[MKMarkdownListHighlighter alloc] init];
@@ -55,6 +57,7 @@
     [self addHighlighter:codeBlockHighlighter];
     [self addHighlighter:inlineBlockHighlighter];
     [self addHighlighter:strongBlockHighlighter];
+    [self addHighlighter:italicHighlighter];
   }
   return self;
 }

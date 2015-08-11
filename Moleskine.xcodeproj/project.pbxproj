@@ -35,6 +35,7 @@
 		E1988ACDFB041C162E81C4AD /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988A7D06523592C0606F79 /* title.png */; };
 		E1988BA212BB66E51B57F597 /* MKMarkdownStrongBlockHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988483F48708A2DB0B9541 /* MKMarkdownStrongBlockHighlighter.m */; };
 		E1988CABC5E3B06DF3B40F9A /* MKMarkdownInlineBlockHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988DB6A023632C84385B36 /* MKMarkdownInlineBlockHighlighter.m */; };
+		E1988E49A794A59143FDE9D4 /* MKMarkdownItalicHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988F0F62881D9AE4A2957C /* MKMarkdownItalicHighlighter.m */; };
 		E1988E700E436CF062412DE2 /* italic.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988150B401F7AC1A63787B /* italic.png */; };
 		E1988ED367B9DFB589201828 /* MKRegularExpressionHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988D5E87A364F773D7E160 /* MKRegularExpressionHighlighter.m */; };
 		E1988F87DBF9EE3AC27C3317 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = E19886716AF45FA4B3723CE4 /* img.png */; };
@@ -90,6 +91,7 @@
 		E198894D683C3E598BFD71E8 /* MKKeyboardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKKeyboardToolBar.m; sourceTree = "<group>"; };
 		E19889534CAF0CA31C60522B /* MKMarkdownCodeBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownCodeBlockHighlighter.m; sourceTree = "<group>"; };
 		E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterType.m; sourceTree = "<group>"; };
+		E1988A16B8C6F2151FF09250 /* MKMarkdownItalicHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownItalicHighlighter.h; sourceTree = "<group>"; };
 		E1988A7D06523592C0606F79 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		E1988B190186B52AB9D1C0BE /* MKHighlighterTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHighlighterTextStorage.h; sourceTree = "<group>"; };
 		E1988B281F71C587CB5D20F5 /* MKMarkdownOrderListHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownOrderListHighlighter.h; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		E1988DB6A023632C84385B36 /* MKMarkdownInlineBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownInlineBlockHighlighter.m; sourceTree = "<group>"; };
 		E1988E009055853A58A2C2FD /* hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hr.png; sourceTree = "<group>"; };
 		E1988E9A488D814DEE93F94F /* MKMarkdownListHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownListHighlighter.m; sourceTree = "<group>"; };
+		E1988F0F62881D9AE4A2957C /* MKMarkdownItalicHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownItalicHighlighter.m; sourceTree = "<group>"; };
 		E1988F1C7484C68CF4C7AEFE /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterTextStorage.m; sourceTree = "<group>"; };
 		E1988FDD00887E1B744DA7FD /* MKRegularExpressionHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKRegularExpressionHighlighter.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				E19886D4C55193AF5F91D6BA /* MKMarkdownStrongBlockHighlighter.h */,
 				E198894D683C3E598BFD71E8 /* MKKeyboardToolBar.m */,
 				E19887CDD056BC650616F981 /* MKKeyboardToolBar.h */,
+				E1988F0F62881D9AE4A2957C /* MKMarkdownItalicHighlighter.m */,
+				E1988A16B8C6F2151FF09250 /* MKMarkdownItalicHighlighter.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				E1988CABC5E3B06DF3B40F9A /* MKMarkdownInlineBlockHighlighter.m in Sources */,
 				E1988BA212BB66E51B57F597 /* MKMarkdownStrongBlockHighlighter.m in Sources */,
 				E19884222C7E7D0B66E7C11B /* MKKeyboardToolBar.m in Sources */,
+				E1988E49A794A59143FDE9D4 /* MKMarkdownItalicHighlighter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
