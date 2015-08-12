@@ -13,12 +13,11 @@
  
 ###预览图
 
-![](screenshots/1.png)
+![](https://raw.githubusercontent.com/shiweifu/Moleskine/master/Screenshots/1.png)
 
-![](screenshots/2.png)
+![](https://raw.githubusercontent.com/shiweifu/Moleskine/master/Screenshots/2.png)
 
-![](screenshots/3.png)
-
+![](https://raw.githubusercontent.com/shiweifu/Moleskine/master/Screenshots/3.png)
 
 ### 如何使用
 
