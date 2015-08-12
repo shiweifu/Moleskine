@@ -7,7 +7,4 @@
 #import <UIKit/UIKit.h>
 
 @interface MKHighlighterTextStorage : NSTextStorage
-
-
-- (void)update;
 @end

@@ -1,0 +1,10 @@
+PODS:
+  - MMMarkdown (0.4.3)
+
+DEPENDENCIES:
+  - MMMarkdown
+
+SPEC CHECKSUMS:
+  MMMarkdown: faacc823952c6b63e85c6d2fd386f8ceab805430
+
+COCOAPODS: 0.38.2

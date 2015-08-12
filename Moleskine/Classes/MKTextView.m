@@ -425,6 +425,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     [textView insertText:@""];
     textView.selectedRange = selectionRange;
   }
+
+  [self lazyHandleEdit];
 }
 
 
@@ -480,6 +482,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
   if(buttonIndex == 0)
   {
+    [self lazyHandleEdit];
     return;
   }
   UITextField *titleTextField = [alertView textFieldAtIndex:0];
@@ -494,6 +497,20 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
   }
 
   [self insertText:s];
+
+  [self lazyHandleEdit];
 }
+
+-(void)lazyHandleEdit
+{
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.5 * NSEC_PER_SEC));
+
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+  {
+    [self becomeFirstResponder];
+  });
+}
+
+
 
 @end

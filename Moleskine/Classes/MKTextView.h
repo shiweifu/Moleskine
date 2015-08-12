@@ -12,7 +12,7 @@
 
 @class MKTextView;
 
-@protocol MKTextViewEventDelegate
+@protocol MKTextViewEventDelegate <NSObject>
 
 @optional
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5794393DD75A70A2B8A1DC3B /* libPods-Moleskine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FDDE36142C3C8815B74183 /* libPods-Moleskine.a */; };
 		68442EA51B706F5C0008F703 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68442EA41B706F5C0008F703 /* main.m */; };
 		68442EA81B706F5C0008F703 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68442EA71B706F5C0008F703 /* AppDelegate.m */; };
 		68442EAB1B706F5C0008F703 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68442EAA1B706F5C0008F703 /* ViewController.m */; };
@@ -28,8 +29,13 @@
 		E19885777ED93324D2032F4C /* quote.png in Resources */ = {isa = PBXBuildFile; fileRef = E19881CDFEB3B8DF88CCE3AD /* quote.png */; };
 		E1988584A1CFDB7B99019A13 /* MKMarkdownOrderListHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988B622E3EFD88398FDA03 /* MKMarkdownOrderListHighlighter.m */; };
 		E19886032B84F43A26921B83 /* code.png in Resources */ = {isa = PBXBuildFile; fileRef = E19884B569DB2648CF06BF92 /* code.png */; };
+		E198861F6F558D8FDCF41F98 /* MKPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E19883654241985F600BD524 /* MKPreviewController.m */; };
+		E198878477423F566D0BA806 /* MKMarkdownController.m in Sources */ = {isa = PBXBuildFile; fileRef = E19887825359127E55E51AD6 /* MKMarkdownController.m */; };
 		E198883306FF25755C0F2B6D /* hr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988E009055853A58A2C2FD /* hr.png */; };
 		E19888903671F1D2821C6A9C /* MKMarkdownCodeBlockHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E19889534CAF0CA31C60522B /* MKMarkdownCodeBlockHighlighter.m */; };
+		E198898D5A30AFD50DEA83E3 /* syntax.md in Resources */ = {isa = PBXBuildFile; fileRef = E1988F0C55F266588D4DCA38 /* syntax.md */; };
+		E1988A1CD70311722DB2B0EC /* markdown.html in Resources */ = {isa = PBXBuildFile; fileRef = E1988C43B474055757739F53 /* markdown.html */; };
+		E1988A2BB2F2E80A925714D9 /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = E1988DE757C51077CDE70889 /* markdown.css */; };
 		E1988A463F864129B5D128C9 /* MKMarkdownHeaderHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E19882D2CA7066971ED27688 /* MKMarkdownHeaderHighlighter.m */; };
 		E1988A7731D104589176879B /* MKHighlighterType.m in Sources */ = {isa = PBXBuildFile; fileRef = E1988A0C8631C3A0EDEC7142 /* MKHighlighterType.m */; };
 		E1988ACDFB041C162E81C4AD /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = E1988A7D06523592C0606F79 /* title.png */; };
@@ -53,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58FDDE36142C3C8815B74183 /* libPods-Moleskine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moleskine.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68442E9F1B706F5C0008F703 /* Moleskine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moleskine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68442EA31B706F5C0008F703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68442EA41B706F5C0008F703 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,16 +75,21 @@
 		68442EBE1B706F5C0008F703 /* MoleskineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoleskineTests.m; sourceTree = "<group>"; };
 		687893FE1B71F98500F93668 /* MKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKTextView.h; sourceTree = "<group>"; };
 		687893FF1B71F98500F93668 /* MKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKTextView.m; sourceTree = "<group>"; };
+		86F158A91629BF86336834CA /* Pods-Moleskine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moleskine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moleskine/Pods-Moleskine.debug.xcconfig"; sourceTree = "<group>"; };
+		922D7CD809AA34BAF91B83B6 /* Pods-Moleskine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moleskine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moleskine/Pods-Moleskine.release.xcconfig"; sourceTree = "<group>"; };
 		E19880D49A52DE26F5DF4F2A /* ol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ol.png; sourceTree = "<group>"; };
 		E198811727E9C1F90EE5989A /* link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link.png; sourceTree = "<group>"; };
+		E198814941B7D58AECB521DB /* MKMarkdownController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownController.h; sourceTree = "<group>"; };
 		E1988150B401F7AC1A63787B /* italic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = italic.png; sourceTree = "<group>"; };
 		E1988167F839E11350B1C959 /* MKMarkdownInlineBlockHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownInlineBlockHighlighter.h; sourceTree = "<group>"; };
 		E19881CDFEB3B8DF88CCE3AD /* quote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quote.png; sourceTree = "<group>"; };
 		E19882D2CA7066971ED27688 /* MKMarkdownHeaderHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownHeaderHighlighter.m; sourceTree = "<group>"; };
+		E19883654241985F600BD524 /* MKPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPreviewController.m; sourceTree = "<group>"; };
 		E198839C4386EACC67D03AAA /* MKMarkdownStrikethroughHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownStrikethroughHighlighter.h; sourceTree = "<group>"; };
 		E19883E671AD1A539FBC3C0A /* MKMarkdownListHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownListHighlighter.h; sourceTree = "<group>"; };
 		E1988483F48708A2DB0B9541 /* MKMarkdownStrongBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownStrongBlockHighlighter.m; sourceTree = "<group>"; };
 		E19884B569DB2648CF06BF92 /* code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = code.png; sourceTree = "<group>"; };
+		E19886013C9FDDB6ECDCE4EF /* MKPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPreviewController.h; sourceTree = "<group>"; };
 		E198861FC3CB6226690B8A64 /* MKMarkdownCodeBlockHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownCodeBlockHighlighter.h; sourceTree = "<group>"; };
 		E198865AF6944D5A5F26E8D9 /* MKMarkdownLinkHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownLinkHighlighter.h; sourceTree = "<group>"; };
 		E19886716AF45FA4B3723CE4 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
@@ -85,6 +97,7 @@
 		E19886D4C55193AF5F91D6BA /* MKMarkdownStrongBlockHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownStrongBlockHighlighter.h; sourceTree = "<group>"; };
 		E198874B170A2C6595068EF4 /* bold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bold.png; sourceTree = "<group>"; };
 		E1988767B61F7782320A561B /* MKMarkdownLinkHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownLinkHighlighter.m; sourceTree = "<group>"; };
+		E19887825359127E55E51AD6 /* MKMarkdownController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownController.m; sourceTree = "<group>"; };
 		E19887CDD056BC650616F981 /* MKKeyboardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKKeyboardToolBar.h; sourceTree = "<group>"; };
 		E198883CC3AC82C6EB9ADBC0 /* MKMarkdownStrikethroughHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownStrikethroughHighlighter.m; sourceTree = "<group>"; };
 		E19888F4DCBBB693158FC2DD /* ul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ul.png; sourceTree = "<group>"; };
@@ -97,11 +110,14 @@
 		E1988B281F71C587CB5D20F5 /* MKMarkdownOrderListHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownOrderListHighlighter.h; sourceTree = "<group>"; };
 		E1988B622E3EFD88398FDA03 /* MKMarkdownOrderListHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownOrderListHighlighter.m; sourceTree = "<group>"; };
 		E1988BD774BD860BBD0A582D /* MKMarkdownHeaderHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMarkdownHeaderHighlighter.h; sourceTree = "<group>"; };
+		E1988C43B474055757739F53 /* markdown.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = markdown.html; sourceTree = "<group>"; };
 		E1988D0AF7D380CAAD27BB0C /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		E1988D5E87A364F773D7E160 /* MKRegularExpressionHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKRegularExpressionHighlighter.m; sourceTree = "<group>"; };
 		E1988DB6A023632C84385B36 /* MKMarkdownInlineBlockHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownInlineBlockHighlighter.m; sourceTree = "<group>"; };
+		E1988DE757C51077CDE70889 /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
 		E1988E009055853A58A2C2FD /* hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hr.png; sourceTree = "<group>"; };
 		E1988E9A488D814DEE93F94F /* MKMarkdownListHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownListHighlighter.m; sourceTree = "<group>"; };
+		E1988F0C55F266588D4DCA38 /* syntax.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = syntax.md; sourceTree = "<group>"; };
 		E1988F0F62881D9AE4A2957C /* MKMarkdownItalicHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMarkdownItalicHighlighter.m; sourceTree = "<group>"; };
 		E1988F1C7484C68CF4C7AEFE /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		E1988FA002B3841D472C3EE5 /* MKHighlighterTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHighlighterTextStorage.m; sourceTree = "<group>"; };
@@ -113,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5794393DD75A70A2B8A1DC3B /* libPods-Moleskine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +149,8 @@
 				68442EA11B706F5C0008F703 /* Moleskine */,
 				68442EBB1B706F5C0008F703 /* MoleskineTests */,
 				68442EA01B706F5C0008F703 /* Products */,
+				71602CA103AC9C9A4214647D /* Pods */,
+				DF831F7AA0216447E1DCAB9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +176,7 @@
 				68442EA21B706F5C0008F703 /* Supporting Files */,
 				E1988CE19B5E6690D2BFBA2D /* Classes */,
 				E1988B4A2B642CB9FF4FCD61 /* Images */,
+				E1988589ECB6255BE8499CF0 /* Resources */,
 			);
 			path = Moleskine;
 			sourceTree = "<group>";
@@ -185,6 +205,33 @@
 				68442EBD1B706F5C0008F703 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71602CA103AC9C9A4214647D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86F158A91629BF86336834CA /* Pods-Moleskine.debug.xcconfig */,
+				922D7CD809AA34BAF91B83B6 /* Pods-Moleskine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DF831F7AA0216447E1DCAB9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58FDDE36142C3C8815B74183 /* libPods-Moleskine.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1988589ECB6255BE8499CF0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1988DE757C51077CDE70889 /* markdown.css */,
+				E1988C43B474055757739F53 /* markdown.html */,
+				E1988F0C55F266588D4DCA38 /* syntax.md */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E1988B4A2B642CB9FF4FCD61 /* Images */ = {
@@ -237,6 +284,10 @@
 				E19887CDD056BC650616F981 /* MKKeyboardToolBar.h */,
 				E1988F0F62881D9AE4A2957C /* MKMarkdownItalicHighlighter.m */,
 				E1988A16B8C6F2151FF09250 /* MKMarkdownItalicHighlighter.h */,
+				E19887825359127E55E51AD6 /* MKMarkdownController.m */,
+				E198814941B7D58AECB521DB /* MKMarkdownController.h */,
+				E19883654241985F600BD524 /* MKPreviewController.m */,
+				E19886013C9FDDB6ECDCE4EF /* MKPreviewController.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -248,9 +299,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68442EC21B706F5C0008F703 /* Build configuration list for PBXNativeTarget "Moleskine" */;
 			buildPhases = (
+				643C73605F6C3A4239155429 /* Check Pods Manifest.lock */,
 				68442E9B1B706F5C0008F703 /* Sources */,
 				68442E9C1B706F5C0008F703 /* Frameworks */,
 				68442E9D1B706F5C0008F703 /* Resources */,
+				0168AFDBBD8319A7D63DDF27 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,6 +389,9 @@
 				E19885777ED93324D2032F4C /* quote.png in Resources */,
 				E1988ACDFB041C162E81C4AD /* title.png in Resources */,
 				E198832E90B687071E5FF929 /* ul.png in Resources */,
+				E1988A2BB2F2E80A925714D9 /* markdown.css in Resources */,
+				E1988A1CD70311722DB2B0EC /* markdown.html in Resources */,
+				E198898D5A30AFD50DEA83E3 /* syntax.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +403,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0168AFDBBD8319A7D63DDF27 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moleskine/Pods-Moleskine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		643C73605F6C3A4239155429 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		68442E9B1B706F5C0008F703 /* Sources */ = {
@@ -370,6 +459,8 @@
 				E1988BA212BB66E51B57F597 /* MKMarkdownStrongBlockHighlighter.m in Sources */,
 				E19884222C7E7D0B66E7C11B /* MKKeyboardToolBar.m in Sources */,
 				E1988E49A794A59143FDE9D4 /* MKMarkdownItalicHighlighter.m in Sources */,
+				E198878477423F566D0BA806 /* MKMarkdownController.m in Sources */,
+				E198861F6F558D8FDCF41F98 /* MKPreviewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,21 +584,25 @@
 		};
 		68442EC31B706F5C0008F703 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F158A91629BF86336834CA /* Pods-Moleskine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Moleskine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
 		};
 		68442EC41B706F5C0008F703 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 922D7CD809AA34BAF91B83B6 /* Pods-Moleskine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Moleskine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
 		};
